@@ -1,0 +1,15 @@
+body {
+    font-family: Comic Sams, Comic Sans MS;
+    background-color: #0076AA;
+    -webkit-font-smoothing: antialiased;
+    margin: auto;
+    max-width: 900px;
+    width: 100%;
+    }
+
+header img{
+    
+    max-height: 200px;
+    width: 100%
+    }
+

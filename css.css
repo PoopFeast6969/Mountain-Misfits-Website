@@ -39,7 +39,9 @@ nav {
 article {
     height 100%;
     text-align: right;
-    vertical-align: center;
+    padding: 10px;
+    background: url(image/Mountain-Climbing.png) no-repeat;
+    padding-left: 400px;
 }
 
 .button {

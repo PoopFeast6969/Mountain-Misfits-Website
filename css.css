@@ -37,6 +37,7 @@ nav {
 } 
 
 article {
+    height 100%;
     text-align: right;
     vertical-align: center;
 }

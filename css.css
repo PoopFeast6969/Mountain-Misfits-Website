@@ -3,7 +3,6 @@ html {
     -webkit-font-smoothing: antialiased;
     background: #222;
     height: 100%;
-    overflow: hidden;
 }
 
 body {
@@ -14,22 +13,11 @@ body {
 }
 
 footer {
-    width: 100%;
     color: white;
 }
 
 header {
-    width: 100%;
     text-align: center;
-}
-
-logo {
-    width: 95%;
-}
-
-climbing {
-    height: 100%;
-    float: right;
 }
 
 nav {
@@ -37,11 +25,7 @@ nav {
 } 
 
 article {
-    height 100%;
     text-align: right;
-    padding: 10px;
-    background: url(image/Mountain-Climbing.png) no-repeat;
-    padding-left: 400px;
 }
 
 .button {
@@ -71,6 +55,21 @@ article {
     border-radius: 20px;
     box-shadow: 10px 10px 10px #000000;
     margin: 5px;
+}
+
+#logo {
+    width: 95%;
+}
+
+#climbing {
+    height: 100%;
+    padding-top: 15px;
+    padding-right: 0px;
+}
+
+#subtitle {
+    color: #fd9114;
+    font-size: 30px;
 }
 
 @keyframes button-bounce {

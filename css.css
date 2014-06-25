@@ -23,13 +23,23 @@ header {
     text-align: center;
 }
 
-img {
+logo {
     width: 95%;
+}
+
+climbing {
+    height: 100%;
+    float: right;
 }
 
 nav {
     padding: 15px;
 } 
+
+article {
+    text-align: right;
+    vertical-align: center;
+}
 
 .button {
     border-radius: 20px;

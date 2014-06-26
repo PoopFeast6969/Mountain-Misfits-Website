@@ -9,16 +9,23 @@ body {
     max-width: 70em;
     margin-left: auto;
     margin-right: auto;
-    height: 100%;
+    min-height: 100%;
+    padding-bottom: 3.1em;
+    position: relative;
 }
 
 footer {
     color: white;
-    font-size: 1em;
-    text-align: right;
+    background: #333;
     position: absolute;
-    bottom: 0;
-    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    border-color: #444;
+    border-width: 2px;
+    border-top-style:solid;
+    width: 200%;
+    bottom: -10px;
+    left: -50%;
     z-index: -1;
 }
 
@@ -36,7 +43,7 @@ nav {
     text-align: center;
     width: 30%;
     color: rgb(50, 50, 50);
-    font-size: 1em;
+    font-size: 150%;
 }
 
 .button:hover {
@@ -81,6 +88,14 @@ nav {
     width: 49%;
     display: inline-block;
     float: right;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing:    border-box;
+  box-sizing:         border-box;
 }
 
 @keyframes button-bounce {

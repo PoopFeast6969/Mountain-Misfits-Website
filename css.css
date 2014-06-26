@@ -30,8 +30,8 @@ article {
 
 .button {
     border-radius: 20px;
-    border-width: 2px;
-    border-color: blue;
+    border-width: 3px;
+    border-color: black;
     font-family: Comic Sans, Comic Sans MS;
     font-size: 100%;
     box-shadow: 2px 2px 10px #000000;

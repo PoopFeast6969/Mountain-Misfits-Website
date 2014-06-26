@@ -6,28 +6,24 @@ html {
 }
 
 body {
-    max-width: 800px;
+    max-width: 70em;
     margin-left: auto;
     margin-right: auto;
     height: 100%;
-}
-
-.content {
-    background: #0076AA;
-    border-radius: 20px;
-    box-shadow: 10px 10px 10px #000000;
-    margin: 5px;
-    text-align: center;
 }
 
 footer {
     color: white;
     font-size: 1em;
     text-align: right;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: -1;
 }
 
 nav {
-    padding: 1%;
+    padding: 2%;
 } 
 
 .button {
@@ -53,6 +49,14 @@ nav {
     filter: invert(100%);
 }
 
+.content {
+    background: #0076AA;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px #000000;
+    margin: 5px;
+    text-align: center;
+}
+
 #logo {
     width: 95%;
 }
@@ -60,8 +64,8 @@ nav {
 #climbing {
     height: 100%;
     padding: 1%;
-    width: 44%;
-    display: inline-block
+    width: 45%;
+    display: inline-block;
 }
 
 #subtitle {
@@ -74,8 +78,9 @@ nav {
     padding: 1%;
     font-size: 1.2em;
     text-align: right;
-    width: 44%;
+    width: 49%;
     display: inline-block;
+    float: right;
 }
 
 @keyframes button-bounce {

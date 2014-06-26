@@ -26,7 +26,7 @@ nav {
 
 article {
     text-align: right;
-    font-size: 2.5vw
+    font-size: 2vw
 }
 
 .button {
@@ -39,6 +39,7 @@ article {
     text-align: center;
     width: 30%;
     color: rgb(50, 50, 50);
+    font-size: 2.5vw
 }
 
 .button:hover {
@@ -71,6 +72,7 @@ article {
 #subtitle {
     color: #fd9114;
     font-size: 30px;
+    font-size: 3vw
 }
 
 @keyframes button-bounce {

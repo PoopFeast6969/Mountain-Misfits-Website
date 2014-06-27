@@ -66,6 +66,21 @@ footer {
     text-align: center;
 }
 
+.subtitle {
+    color: #fd9114;
+    font-size: 2em;
+    padding-bottom: 1%;
+}
+
+.text {
+    padding: 1%;
+    font-size: 1.2em;
+    text-align: right;
+    width: 49%;
+    display: inline-block;
+    float: right;
+}
+
 #logo {
     width: 95%;
 }
@@ -77,20 +92,6 @@ footer {
     display: inline-block;
 }
 
-#subtitle {
-    color: #fd9114;
-    font-size: 2em;
-    padding-bottom: 1%;
-}
-
-#text {
-    padding: 1%;
-    font-size: 1.2em;
-    text-align: right;
-    width: 49%;
-    display: inline-block;
-    float: right;
-}
 
 *,
 *:before,

@@ -6,7 +6,7 @@ html {
 }
 
 body {
-    max-width: 70em;
+    max-width: 60em;
     margin-left: auto;
     margin-right: auto;
     min-height: 100%;
@@ -14,12 +14,17 @@ body {
     position: relative;
 }
 
+nav {
+    padding: 2%;
+} 
+
 footer {
     color: white;
     background: #333;
     position: absolute;
     text-align: center;
     padding: 1rem;
+    padding-bottom: 2rem;
     border-color: #444;
     border-width: 2px;
     border-top-style:solid;
@@ -28,10 +33,6 @@ footer {
     left: -50%;
     z-index: -1;
 }
-
-nav {
-    padding: 2%;
-} 
 
 .button {
     border-radius: 20px;

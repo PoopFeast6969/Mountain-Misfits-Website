@@ -28,9 +28,9 @@ footer {
     border-color: #444;
     border-width: 2px;
     border-top-style: solid;
-    width: 200%;
+    width: 1000%;
     bottom: -3rem;
-    left: -50%;
+    left: -450%;
     font-size: 110%;
     z-index: -1;
 }
@@ -70,33 +70,30 @@ footer {
 
 .subtitle {
     color: #fd9114;
-    font-size: 2em;
-    display: table-cell;
+    font-size: 3em;
 }
 
-.text {
+.articletext {
     font-size: 1.2em;
-    text-align: right;
-    width: 50%;
     display: table-cell;
+    vertical-align: top;
+    text-align: right;
 }
 
-.contenttable {
-    padding: 10px
+.articleimage {
+    display: table-cell;
+    vertical-align: top;
+}
+
+.articletable {
+    padding: 10px;
+    display: table;
+    white-space: pre-wrap;
+    table-layout: auto;
 }
 
 #logo {
     width: 95%;
-}
-
-#climbing {
-    width: 45%;
-    display: table-cell;;
-}
-
-.content:target {
-    -webkit-animation:shake 0.8s ease-in-out;
-    animation:shake 0.8s ease-in-out;
 }
 
 *,

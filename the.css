@@ -78,18 +78,30 @@ footer {
     display: table-cell;
     vertical-align: top;
     text-align: right;
+    width: 50%;
 }
 
 .articleimage {
     display: table-cell;
     vertical-align: top;
+    width: 80%;
 }
 
 .articletable {
     padding: 10px;
     display: table;
-    white-space: pre-wrap;
-    table-layout: auto;
+}
+
+.galleryimage {
+    display: table-cell;
+}
+
+.gallerytable {
+    display: table;
+}
+
+.galleryrow {
+    display: table-row;
 }
 
 #logo {

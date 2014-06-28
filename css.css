@@ -10,7 +10,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     min-height: 100%;
-    padding-bottom: 1em;
+    padding-bottom: 3.1em;
     position: relative;
 }
 
@@ -19,8 +19,7 @@ nav {
 } 
 
 footer {
-    color: #999;
-    text-shadow: 1px 1px white, -1px -1px black;
+    color: white;
     background: #333;
     position: absolute;
     text-align: center;
@@ -31,7 +30,6 @@ footer {
     width: 200%;
     bottom: -3rem;
     left: -50%;
-    font-size: 110%;
     z-index: -1;
 }
 
@@ -46,21 +44,21 @@ footer {
     width: 30%;
     color: rgb(50, 50, 50);
     font-size: 150%;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
 
 .button:hover {
-    -webkit-animation:button-bounce .35s ease-in-out;
+   -webkit-animation:button-bounce .35s ease-in-out;
     animation:button-bounce .35s ease-in-out;
 } 
 
 .button:active {
-    -webkit-filter: invert(50%);
-    filter: invert(50%);
-    -webkit-transition: all 1s ease;
-    transition: all 1s ease;
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
 }
 
-.content, .article {
+.content {
     background: #0076AA;
     border-radius: 20px;
     box-shadow: 10px 10px 10px #000000;
@@ -71,18 +69,15 @@ footer {
 .subtitle {
     color: #fd9114;
     font-size: 2em;
-    display: table-cell;
+    padding-bottom: 1%;
 }
 
 .text {
+    padding: 1%;
     font-size: 1.2em;
     text-align: right;
-    width: 50%;
-    display: table-cell;
-}
-
-.contenttable {
-    padding: 10px
+    width: 49%;
+    display: inline-block;
 }
 
 #logo {
@@ -90,14 +85,12 @@ footer {
 }
 
 #climbing {
+    height: 100%;
+    padding: 1%;
     width: 45%;
-    display: table-cell;;
+    display: inline-block;
 }
 
-.content:target {
-    -webkit-animation:shake 0.8s ease-in-out;
-    animation:shake 0.8s ease-in-out;
-}
 
 *,
 *:before,
@@ -122,14 +115,3 @@ footer {
 75% {-webkit-transform: scale(.9);}
 100% {-webkit-transform: scale(1);}
 }
-
-@-webkit-keyframes shake { 
-    0%, 100% {-webkit-transform: translateX(0);} 
-    10%, 30%, 50%, 70%, 90% {-webkit-transform: translateX(-10px);} 
-    20%, 40%, 60%, 80% {-webkit-transform: translateX(10px);} 
-} 
-@keyframes shake { 
-    0%, 100% {transform: translateX(0);} 
-    10%, 30%, 50%, 70%, 90% {transform: translateX(-10px);} 
-    20%, 40%, 60%, 80% {transform: translateX(10px);} 
-} 

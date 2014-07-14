@@ -3,8 +3,9 @@ html {
     -webkit-font-smoothing: antialiased;
     background: #222;
     height: 100%;
+    -webkit-animation: blur 50s ease-in-out forwards;
+    animation: blur 50s ease-in-out forwards;
 }
-
 body {
     max-width: 60em;
     margin-left: auto;
@@ -13,11 +14,9 @@ body {
     padding-bottom: 1em;
     position: relative;
 }
-
 nav {
     padding: 2%;
-} 
-
+}
 footer {
     color: #999;
     text-shadow: 1px 1px white, -1px -1px black;
@@ -31,10 +30,9 @@ footer {
     width: 1000%;
     bottom: -3rem;
     left: -450%;
-    font-size: 110%;
+    font-size: 1em;
     z-index: -1;
 }
-
 .button {
     border-radius: 20px;
     border-width: 3px;
@@ -47,98 +45,143 @@ footer {
     color: rgb(50, 50, 50);
     font-size: 150%;
 }
-
 .button:hover {
-    -webkit-animation:button-bounce .35s ease-in-out;
-    animation:button-bounce .35s ease-in-out;
-} 
-
+    -webkit-animation: button-bounce .35s ease-in-out;
+    animation: button-bounce .35s ease-in-out;
+}
 .button:active {
     -webkit-filter: invert(50%);
     filter: invert(50%);
     -webkit-transition: all 1s ease;
     transition: all 1s ease;
 }
-
-.content, .article {
+.content,
+.article {
     background: #0076AA;
     border-radius: 20px;
     box-shadow: 10px 10px 10px #000000;
     margin: 5px;
     text-align: center;
 }
-
+.article:target {
+    -webkit-animation: shake 1s ease-in-out;
+    animation: shake 1s ease-in-out;
+}
 .subtitle {
     color: #fd9114;
     font-size: 3em;
 }
-
-.articletext {
+.subsubtitle {
+    font-size: 2rem;
+}
+.articleright {
     font-size: 1.2em;
     display: table-cell;
     vertical-align: top;
     text-align: right;
     width: 50%;
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2), color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22));
+    background-image: gradient(linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2), color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22));
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
 }
-
-.articleimage {
+.articleleft {
     display: table-cell;
     vertical-align: top;
     width: 80%;
 }
-
 .articletable {
     padding: 10px;
     display: table;
+    width: 100%;
 }
-
-.galleryimage {
-    display: table-cell;
-}
-
-.gallerytable {
-    display: table;
-}
-
-.galleryrow {
-    display: table-row;
-}
-
 #logo {
     width: 95%;
 }
-
 *,
 *:before,
 *:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing:    border-box;
-  box-sizing:         border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
-
 @keyframes button-bounce {
-0% {transform: scale(1);}
-25% {transform: scale(.8);}
-50% {transform: scale(1);}
-75% {transform: scale(.9);}
-100% {transform: scale(1);}
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(.8);
+    }
+    50% {
+        transform: scale(1);
+    }
+    75% {
+        transform: scale(.9);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
-
 @-webkit-keyframes button-bounce {
-0% {-webkit-transform: scale(1);}
-25% {-webkit-transform: scale(.8);}
-50% {-webkit-transform: scale(1);}
-75% {-webkit-transform: scale(.9);}
-100% {-webkit-transform: scale(1);}
+    0% {
+        -webkit-transform: scale(1);
+    }
+    25% {
+        -webkit-transform: scale(.8);
+    }
+    50% {
+        -webkit-transform: scale(1);
+    }
+    75% {
+        -webkit-transform: scale(.9);
+    }
+    100% {
+        -webkit-transform: scale(1);
+    }
 }
+@-webkit-keyframes shake {
+    0%, 100% {
+        -webkit-transform: translateX(0);
+    }
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        -webkit-transform: translateX(-10px);
+    }
+    20%,
+    40%,
+    60%,
+    80% {
+        -webkit-transform: translateX(10px);
+    }
+}
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: translateX(-10px);
+    }
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: translateX(10px);
+    }
+}
+@-webkit-keyframes blur {
+    0% {-webkit-filter: blur(0px);}
+    100% {-webkit-filter: blur(10px);}
+}        
 
-@-webkit-keyframes shake { 
-    0%, 100% {-webkit-transform: translateX(0);} 
-    10%, 30%, 50%, 70%, 90% {-webkit-transform: translateX(-10px);} 
-    20%, 40%, 60%, 80% {-webkit-transform: translateX(10px);} 
-} 
-@keyframes shake { 
-    0%, 100% {transform: translateX(0);} 
-    10%, 30%, 50%, 70%, 90% {transform: translateX(-10px);} 
-    20%, 40%, 60%, 80% {transform: translateX(10px);} 
-} 
+@keyframes blur {
+    0% {filter: blur(0px);}
+    100% {filter: blur(100px);}
+}        

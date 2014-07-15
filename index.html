@@ -9,12 +9,12 @@
         $(document).ready(function(){
     		$(".button").click(function(event){
         	//prevent the default action for the click event
-			event.preventDefault();
+		//event.preventDefault();
 
         	//get the full url
         	var full_url = this.href;
 
-	 		//split the url by # and get the anchor target name
+	 	//split the url by # and get the anchor target name
         	var parts = full_url.split("#");
         	var trgt = parts[1];
 

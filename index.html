@@ -70,10 +70,10 @@ $(document).ready(function(){
             </div>
         </div>
         <div class="articletable">
-            <img id="kden" class="articleleft" src="images/MKZwVkb.gif" alt="kden" draggable="false">
+            <img id="kden" class="articleleft" src="images/MKZwVkb.gif" alt="kden" draggable="false" style="transform: rotateZ(180deg)">
             <div class="articleright">
                 <b class="subsubtitle">Post #3</b>
-                <br>Learnt how to spell.
+                <br>Learnt how to spell, and attempted to make smooth scrolling script with javascript.
             </div>
         </div>
     </article>
@@ -95,6 +95,7 @@ $(document).ready(function(){
         html {
         font-family: Comic Sams, Comic Sans MS;
         -webkit-font-smoothing: antialiased;
+        font-smoothing: antialiased;
         background: #222;
         height: 100%;
         -webkit-animation: blur 60s ease-in-out forwards;
@@ -175,7 +176,7 @@ $(document).ready(function(){
         text-align: right;
         width: 50%;
         background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2), color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22));
-        background-image: gradient(linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2), color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22));
+        background-image: linear-gradient(linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2), color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22));
         color: transparent;
         -webkit-background-clip: text;
         background-clip: text;
@@ -230,7 +231,7 @@ $(document).ready(function(){
     }
     @keyframes blur {
         0% {filter: blur(0px);}
-        100% {filter: blur(50px);}
+        100% {filter: blur(10px);}
     }
     </style>
 </body>

@@ -7,19 +7,25 @@
     <script src="//code.jquery.com/jquery-latest.min.js "></script>
     <script>
         $(document).ready(function(){
-            $('a[href^="#"]').on('click',function (e) {
-                e.preventDefault();
+    		$(".button").click(function(event){
+        	//prevent the default action for the click event
+			event.preventDefault();
 
-                var target = this.hash,
-                $target = $(target);
+        	//get the full url
+        	var full_url = this.href;
 
-                $('html, body').stop().animate({
-                    'scrollTop': $target.offset().top
-                }, 900, 'swing', function () {
-                    window.location.hash = target;
-                });
-            });
-        });
+	 		//split the url by # and get the anchor target name
+        	var parts = full_url.split("#");
+        	var trgt = parts[1];
+
+        	//get the top offset of the target anchor
+        	var target_offset = $("#"+trgt).offset();
+        	var target_top = target_offset.top;
+
+        	//goto that anchor by setting the body scroll top to anchor top
+        	$('html, body').animate({scrollTop:target_top}, 1500, 'easeInSine');
+    	});
+	});
 	</script>
 
 </head> 

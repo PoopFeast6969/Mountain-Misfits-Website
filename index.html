@@ -75,11 +75,9 @@
         html {
             font-family: Comic Sams, Comic Sans MS;
             -webkit-font-smoothing: antialiased;
-            font-smoothing: antialiased;
             background: #222;
             height: 100%;
-            -webkit-animation: blur 100s ease-in-out forwards;
-            animation: blur 100s ease-in-out forwards;
+            -webkit-animation: blu 100s ease-in-out forwards;
             overflow-x: hidden
         }
         body {
@@ -123,13 +121,10 @@
         }
         .button:hover {
             -webkit-animation: button-bounce .35s ease-in-out;
-            animation: button-bounce .35s ease-in-out;
         }
         .button:active {
             -webkit-filter: invert(50%);
-            filter: invert(50%);
             -webkit-transition: all 1s ease;
-            transition: all 1s ease;
         }
         .content,
         .article {
@@ -141,7 +136,6 @@
         }
         .article:focus {
             -webkit-animation: shake 1s ease-in-out;
-            animation: shake 1s ease-in-out;
         }
         .subtitle {
             color: #fd9114;
@@ -157,10 +151,8 @@
             text-align: right;
             width: 50%;
             background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2), color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22));
-            background-image: gradient(linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2), color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22));
             color: transparent;
             -webkit-background-clip: text;
-            background-clip: text;
         }
         .articleleft {
             display: table-cell;
@@ -179,15 +171,6 @@
         *:before,
         *:after {
             -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
-        }
-        @keyframes button-bounce {
-            0% {transform: scale(1);}
-            25% {transform: scale(.8);}
-            50% {transform: scale(1);}
-            75% {transform: scale(.9);}
-            100% {transform: scale(1);}
         }
         @-webkit-keyframes button-bounce {
             0% {-webkit-transform: scale(1);}
@@ -201,19 +184,30 @@
             10%, 30%, 50%, 70%, 90% {-webkit-transform: translateX(-10px);}
             20%, 40%, 60%, 80% {-webkit-transform: translateX(10px);}
         }
-        @keyframes shake {
-            0%, 100% {transform: translateX(0);}
-            10%, 30%, 50%, 70%, 90% {transform: translateX(-10px);}
-            20%, 40%, 60%, 80% {transform: translateX(10px);}
-        }
         @-webkit-keyframes blur {
             0% {-webkit-filter: blur(0px);}
             100% {-webkit-filter: blur(10px);}
         }
-        @keyframes blur {
-            0% {filter: blur(0px);}
-            100% {filter: blur(10px);}
-        }
     </style>
 </body>
+    
+<script>
+    var items = {
+        'flippers': {
+            'price': 10
+        }        
+        'chalk': {
+            'price': 696969
+        }        
+        'boots': {
+            'price': 75
+        }        
+        '"chalk"': {
+            'price': 1000000
+        }
+    };
+    var i = 0
+    while()
+</script>
+    
 </html>

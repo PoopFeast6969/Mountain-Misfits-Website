@@ -67,6 +67,11 @@
                 <br>In Bus we Trust
             </div>
         </div>
+    </article>    
+    <article id="shop" class="article">
+        <b class="subtitle">Contact</b>
+        <br>
+        <br>In Bus we Trust
     </article>
     <footer>
         &nbsp;&copy; So, you've come all the way to the footer have you? Only to find its making sarcastic comments at your expense. Bummer.
@@ -194,20 +199,24 @@
 <script>
     var items = {
         'flippers': {
-            'price': 10
-        }        
+            'price':10
+        },
         'chalk': {
-            'price': 696969
-        }        
+            'price':696969
+        },
         'boots': {
-            'price': 75
-        }        
+            'price':75
+        },
         '"chalk"': {
-            'price': 1000000
+            'price':1000000
         }
-    };
-    var i = 0
-    while()
+    },
+    i = 0
+    while(i <= Object.keys(items).length) {
+        document.getElementById("shop").appendChild(document.getElementById("shop").items[Object.keys(items)[i]]);
+        console.log("Added Item");
+        i++;
+    }
 </script>
     
 </html>

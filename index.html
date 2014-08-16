@@ -70,8 +70,8 @@
     </article>    
     <article id="shop" class="article">
         <b class="subtitle">Shop</b>
-        <br>
-        <br>In Bus we Trust
+        <div id="buy"></div>
+        <div id="cart"><b class="subtitle">Cart</b></div>
     </article>
     <footer>
         &nbsp;&copy; So, you've come all the way to the footer have you? Only to find its making sarcastic comments at your expense. Bummer.
@@ -83,7 +83,7 @@
             background: #222;
             height: 100%;
             -webkit-animation: blu 100s ease-in-out forwards;
-            overflow-x: hidden
+            overflow-x: hidden;
         }
         body {
             max-width: 60em;
@@ -144,6 +144,7 @@
         .subtitle {
             color: #fd9114;
             font-size: 3em;
+            text-align: right;
         }
         .subsubtitle {
             font-size: 2rem;
@@ -163,9 +164,13 @@
         .item {
             background: #006791;
             margin: 10px;
+            padding: 10px;
+            display: inline-table;
         }
         #logo {
             width: 95%;
+        }
+        #cart {
         }
         *,
         *:before,
@@ -191,7 +196,7 @@
     </style>
 </body>
     
-<script>
+<script onload="cartupdate()">
     var items = {
         'flippers': {
             'price':10
@@ -206,19 +211,23 @@
             'price':1000000
         }
     },
+    cart = [],
     i = 0
     for (var name in items) {
-        document.getElementById("shop").appendChild(document.createElement("div")).id = name;
-        document.getElementById(name).className = "item";
-        document.getElementById(name).setAttribute('title','Click to buy ' + name)
-        document.getElementById(name).appendChild(document.createElement("div")).id = name + "-buypanel";
-        document.getElementById(name + "-buypanel").innerHTML = this.price;
-        document.getElementById(name).appendChild(document.createElement("img")).id = name + "-image";
-        document.getElementById(name + "-image").src = "images/" + name + ".png";
-        console.log("Added item " + name);
-    }
-    function itemadd(name) {
+        document.getElementById("buy").appendChild(document.createElement("div")).id=name+"-buy";
+        document.getElementById(name+"-buy").className="item";
+        document.getElementById(name+"-buy").setAttribute('title','Click to add '+name+' to cart');
+        document.getElementById(name+"-buy").setAttribute('onclick','cartadd("'+name+'")');
         
+        document.getElementById(name+"-buy").appendChild(document.createElement("div")).id=name+"-buypanel";
+        document.getElementById(name+"-buypanel").innerHTML=name+" $"+items[name].price;
+        
+        document.getElementById(name+"-buy").appendChild(document.createElement("img")).id=name+"-image";
+        document.getElementById(name+"-image").src ="images/"+name+".png";
+        console.log("Added item "+name);
+    }
+    function cartadd(name) {
+        console.log("hi");
     }
 </script>
     

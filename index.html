@@ -4,7 +4,7 @@
 <head>
     <title>Mountain Misfits</title>
     <meta charset="utf-8">
-    <script src="//code.jquery.com/jquery-latest.min.js "></script>
+    <!--<script src="//code.jquery.com/jquery-latest.min.js "></script>-->
 </head> 
 
 <body>
@@ -60,7 +60,7 @@
     </article>
     <article id="contact" class="article">
         <div class="articletable">
-            <img id="boots" class="articleleft" src="images/Boots.png" alt="boots" draggable="false">
+            <img class="articleleft" src="images/Boots.png" draggable="false">
             <div class="articleright">
                 <b class="subtitle">Contact</b>
                 <br>
@@ -69,7 +69,7 @@
         </div>
     </article>    
     <article id="shop" class="article">
-        <b class="subtitle">Contact</b>
+        <b class="subtitle">Shop</b>
         <br>
         <br>In Bus we Trust
     </article>
@@ -137,7 +137,6 @@
             border-radius: 20px;
             box-shadow: 10px 10px 10px #000000;
             margin: 5px;
-            text-align: center;
         }
         .article:focus {
             -webkit-animation: shake 1s ease-in-out;
@@ -151,8 +150,6 @@
         }
         .articleright {
             font-size: 1.2em;
-            display: table-cell;
-            vertical-align: top;
             text-align: right;
             width: 50%;
             background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2), color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22));
@@ -160,14 +157,12 @@
             -webkit-background-clip: text;
         }
         .articleleft {
-            display: table-cell;
             vertical-align: top;
             width: 80%;
         }
-        .articletable {
-            padding: 10px;
-            display: table;
-            width: 100%;
+        .item {
+            background: #006791;
+            margin: 10px;
         }
         #logo {
             width: 95%;
@@ -204,7 +199,7 @@
         'chalk': {
             'price':696969
         },
-        'boots': {
+        'cheese stringer': {
             'price':75
         },
         '"chalk"': {
@@ -212,10 +207,18 @@
         }
     },
     i = 0
-    while(i <= Object.keys(items).length) {
-        document.getElementById("shop").appendChild(document.getElementById("shop").items[Object.keys(items)[i]]);
-        console.log("Added Item");
-        i++;
+    for (var name in items) {
+        document.getElementById("shop").appendChild(document.createElement("div")).id = name;
+        document.getElementById(name).className = "item";
+        document.getElementById(name).setAttribute('title','Click to buy ' + name)
+        document.getElementById(name).appendChild(document.createElement("div")).id = name + "-buypanel";
+        document.getElementById(name + "-buypanel").innerHTML = this.price;
+        document.getElementById(name).appendChild(document.createElement("img")).id = name + "-image";
+        document.getElementById(name + "-image").src = "images/" + name + ".png";
+        console.log("Added item " + name);
+    }
+    function itemadd(name) {
+        
     }
 </script>
     

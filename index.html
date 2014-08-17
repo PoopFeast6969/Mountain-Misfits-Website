@@ -137,6 +137,7 @@
             border-radius: 20px;
             box-shadow: 10px 10px 10px #000000;
             margin: 5px;
+            padding: 10px;
         }
         .article:focus {
             -webkit-animation: shake 1s ease-in-out;
@@ -161,11 +162,13 @@
             vertical-align: top;
             width: 80%;
         }
-        .item {
+        .buyitem {
+            display: inline-table;
+        }
+        .cartitem, .buyitem {
             background: #006791;
             margin: 10px;
             padding: 10px;
-            display: inline-table;
         }
         #logo {
             width: 95%;
@@ -207,27 +210,37 @@
         'cheese stringer': {
             'price':75
         },
-        '"chalk"': {
+        'white powder': {
             'price':1000000
         }
     },
     cart = [],
     i = 0
-    for (var name in items) {
-        document.getElementById("buy").appendChild(document.createElement("div")).id=name+"-buy";
-        document.getElementById(name+"-buy").className="item";
-        document.getElementById(name+"-buy").setAttribute('title','Click to add '+name+' to cart');
-        document.getElementById(name+"-buy").setAttribute('onclick','cartadd("'+name+'")');
+    for (var item in items) {
+        document.getElementById("buy").appendChild(document.createElement("div")).id=item+"-buy";
+        document.getElementById(item+"-buy").className="buyitem";
+        document.getElementById(item+"-buy").setAttribute('title','Click to add '+item+' to cart');
+        document.getElementById(item+"-buy").setAttribute('onclick','cartadd("'+item+'")');
         
-        document.getElementById(name+"-buy").appendChild(document.createElement("div")).id=name+"-buypanel";
-        document.getElementById(name+"-buypanel").innerHTML=name+" $"+items[name].price;
+        document.getElementById(item+"-buy").appendChild(document.createElement("div")).id=item+"-buypanel";
+        document.getElementById(item+"-buypanel").innerHTML=item+" $"+items[item].price;
         
-        document.getElementById(name+"-buy").appendChild(document.createElement("img")).id=name+"-image";
-        document.getElementById(name+"-image").src ="images/"+name+".png";
-        console.log("Added item "+name);
+        document.getElementById(item+"-buy").appendChild(document.createElement("img")).id=item+"-image";
+        document.getElementById(item+"-image").src ="images/"+item+".png";
+        console.log("Added item "+item);
     }
-    function cartadd(name) {
-        alert(name);
+    function cartadd(item) {
+        var count = 0;
+        cart.push(item);
+        for (var itemcount in cart){
+            if(cart[itemcount]. == item){
+                count++;
+            }
+        }
+        document.getElementById("cart").appendChild(document.createElement("div")).id=item+"-cart";
+        document.getElementById(item+"-cart").className="cartitem";
+        document.getElementById(item+"-cart").innerHTML=item+" Price:$"+items[item].price+" Quantity:"+count;
+        console.log("Added item "+item+" to cart");
     }
 </script>
     

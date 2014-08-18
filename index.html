@@ -71,7 +71,9 @@
     <article id="shop" class="article">
         <b class="subtitle">Shop</b>
         <div id="buy"></div>
-        <div id="cart"><b class="subtitle">Cart</b></div>
+        <b class="subtitle">Cart</b>
+        <button class="button" id="clearbutton" onclick="clearcart()">Clear Cart</button>
+        <div id="cart"></div>
     </article>
     <footer>
         &nbsp;&copy; So, you've come all the way to the footer have you? Only to find its making sarcastic comments at your expense. Bummer.
@@ -173,7 +175,8 @@
         #logo {
             width: 95%;
         }
-        #cart {
+        #clearcart {
+            float: right;
         }
         *,
         *:before,
@@ -239,7 +242,7 @@
     };
 </script>
     
-<script onload="cartupdate()">
+<script>
     var items = {
         'flippers': {
             'price':10
@@ -270,24 +273,18 @@
     }
     function cartadd(item) {
         cart.push(item);
-        var  count = {}; 
-        cart.forEach(function(i) { count[i] = (count[i]||0)+1;  });
-        document.getElementById("cart").appendChild(document.createElement("div")).id=item+"-cart";
-        document.getElementById(item+"-cart").className="cartitem";
-        document.getElementById(item+"-cart").innerHTML=item+" Price:$"+items[item].price+" Quantity:"+count[item];
-        console.log("Added item "+item+" to cart");
-        
         docCookies.setItem('cart', JSON.stringify(cart), Infinity);
+        cartdraw()
     }
     function clearcart() {
         cart = [];
         docCookies.removeItem('cart');
+        cartdraw();
     }
-    if (docCookies.getItem('cart') == null) {
-        var cart = [];
-    } 
-    else {
-        cart = JSON.parse(docCookies.getItem('cart'));
+    function cartdraw() {
+        while (document.getElementById("cart").firstChild) {
+            document.getElementById("cart").removeChild(document.getElementById("cart").firstChild);
+        }
         for (var itemindex in cart) {
             var item = cart[itemindex]; 
             var  count = {}; 
@@ -295,10 +292,17 @@
             document.getElementById("cart").appendChild(document.createElement("div")).id=item+"-cart";
             document.getElementById(item+"-cart").className="cartitem";
             document.getElementById(item+"-cart").innerHTML=item+" Price:$"+items[item].price+" Quantity:"+count[item];
+            console.log("Added item "+item+" to cart");
         }
-        console.log("Loaded cart");
     }
-    
+    if (docCookies.getItem('cart') == null) {
+        var cart = [];
+    } 
+    else {
+        var cart = JSON.parse(docCookies.getItem('cart'));
+        cartdraw();
+        console.log("Loaded cart from cookie");
+    }
 </script>
     
 </html>

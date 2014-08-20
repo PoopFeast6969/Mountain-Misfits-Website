@@ -167,7 +167,7 @@
             width: 80%;
         }
         .buyitem {
-            display: inline-table;
+            display:inline-block;
         }
         .cartitem, .buyitem {
             background: #006791;
@@ -280,19 +280,28 @@
         
         document.getElementById(item+"-buy").appendChild(document.createElement("img")).id=item+"-image";
         document.getElementById(item+"-image").src ="images/"+item+".png";
+        document.getElementById(item+"-image").style.width='15em';
         console.log("Added item "+item);
     }
     function cartadd(item) {
         cart.push(item);
         docCookies.setItem('cart', JSON.stringify(cart), Infinity);
-        cartdraw()
+        cartdraw();
+        console.log("Added item "+item+" to cart")
     }
-    function clearcart() {
-        cart = [];
-        docCookies.removeItem('cart');
+    function clearcart(item) {
+        if (item !== null) {
+            cart = cart.filter(function( obj ) {
+                return obj.field !== item;
+            })
+        } else {
+            cart = [];
+        }
+        docCookies.setItem('cart', JSON.stringify(cart), Infinity);
         cartdraw();
     }
     function cartdraw() {
+        var total=0
         while (document.getElementById("cart").firstChild) {
             document.getElementById("cart").removeChild(document.getElementById("cart").firstChild);
         }
@@ -303,8 +312,11 @@
             document.getElementById("cart").appendChild(document.createElement("div")).id=item+"-cart";
             document.getElementById(item+"-cart").className="cartitem";
             document.getElementById(item+"-cart").innerHTML=item+" Price:$"+items[item].price+" Quantity:"+count[item];
-            console.log("Added item "+item+" to cart");
+            console.log("Rendered item "+item+" in cart");
+            total += +items[item].price.toFixed(2);
         }
+        document.getElementById("cart").appendChild(document.createElement("div")).id="cart-total";
+        document.getElementById("cart-total").innerHTML="Total price:$"+total+" Plus GST:$"+(total+(total*1/10));
     }
     if (docCookies.getItem('cart') == null) {
         var cart = [];
